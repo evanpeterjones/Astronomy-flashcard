@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#a").click(function () {
+                $("body").css("background-color", "red");
+                $("p").text("A");
+            });
+            $("#b").click(function () {
+                $("body").css("background-color", "green");
+                $("p").text("B");
+            });
+            $("#c").click(function () {
+                $("body").css("background-color", "yellow");
+                $("p").text("C");
+            });
+            $("#d").click(function () {
+                $("body").css("background-color", "blue");
+                $("p").text("D");
+            });
+            $("#idk").click(function () {
+                $("body").css("background-color", getRandomColor());
+                $("p").text(getRandomCard());
+            });
+        });
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        function getRandomCard() {
+            var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var choice = '';
+            choice = letters[Math.floor(Math.random() * 26)] + "?";
+            return choice;
+        }
+    </script>
+</head>
+<style>
+    body {
+        background-color: red;
+    }
+
+    p {
+        text-align: center;
+        vertical-align: center;
+        font-size: 300px;
+    }
+</style>
+
+<body>
+    <p>A</p>
+    <button id="a">A</button>
+    <button id="b">B</button>
+    <button id="c">C</button>
+    <button id="d">D</button>
+    <button id="idk">IDK</button>
+</body>
+<footer>
+</footer>
+
+</html>
